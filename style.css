@@ -1,0 +1,23 @@
+button.selected {
+    background-color: #4db761;
+    color: white;
+}
+.legend_circle {
+  min-width: 12px;
+  min-height: 12px;
+  border-radius: 6px;
+  background-color: gray;
+  margin-right: 6px;
+}
+
+.legend_charging {
+  background-color: #66d178;
+}
+
+.legend_discharging {
+  background-color: #bfcfe0;
+}
+
+.legend_save {
+  background-color: #17b0c2;
+}
