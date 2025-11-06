@@ -30,12 +30,14 @@ class Chart(Gtk.DrawingArea):
 
         if not minute_log.exists():
             return [{'v': 0, 's': 'l'} for _ in range(144)]
-
+        prev_value = None
         with open(minute_log, newline='') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 try:
                     timestamp = datetime.fromisoformat(row['timestamp'])
+                    if timestamp.date() < target_date:
+                        prev_value = float(row['percent'])
                     if timestamp.date() != target_date:
                         continue
 
@@ -59,7 +61,7 @@ class Chart(Gtk.DrawingArea):
                     print(f"Error parsing row: {row} — {e}")
 
         result = []
-        last_known = {'v': 0, 's': 'l'}
+        last_known = {'v': round(prev_value or 0, 2), 's': 'l'}
 
         for i in range(144):
             interval_time = time(i // 6, (i % 6) * 10)
