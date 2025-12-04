@@ -222,3 +222,12 @@ class Chart(Gtk.DrawingArea):
         context.move_to(width / 2, height - y_margin + 16)
         context.show_text("12")
 
+        # 20% (внизу праворуч)
+        context.move_to(width - x_margin + 5, (height - y_margin) / 100 * 80)
+        context.show_text("20%")
+        context.set_line_width(1)
+        context.set_source_rgba(1, 1, 0.3, 1)
+        context.move_to(0 + x_margin, (height - y_margin) / 100 * 80)
+        context.line_to(width - x_margin, (height - y_margin) / 100 * 80)
+        context.stroke()
+

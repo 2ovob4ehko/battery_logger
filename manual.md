@@ -29,4 +29,4 @@ sudo apt install python3-psutil
 ```
 
 Всі іконки треба скопіювати в спеціальну папку в залежності від розміру кожного
-~/.local/share/icons/hicolor/48x48/apps/battery_logger.png
+~/.local/share/icons/hicolor/48x48/apps/com.mmaaxx.batterylogger.png
